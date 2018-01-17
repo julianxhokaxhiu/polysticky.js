@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>polysticky.js Demo</title>
+  <style>
+    body {
+      background: #666;
+    }
+
+    .tall-element {
+      height: 9999px;
+      background: #999;
+    }
+
+    .sticky {
+      position: sticky;
+      display: block;
+      background-color: #333;
+      color: #fff;
+    }
+
+    .sticky-top {
+      top: 0;
+    }
+
+    .sticky-bottom {
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="sticky sticky-top">the Top element</div>
+  <div class="tall-element"></div>
+  <div class="sticky sticky-bottom">the Bottom element</div>
+  <!-- Load the polysticky.js library -->
+  <script src="dist/polysticky.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      new PolySticky('.sticky-top')
+      new PolySticky('.sticky-bottom')
+    }, false)
+  </script>
+</body>
+</html>
