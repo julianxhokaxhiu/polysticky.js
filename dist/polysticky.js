@@ -98,9 +98,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var _class = function () {
-  function _class(selector, config) {
-    _classCallCheck(this, _class);
+var PolySticky = function () {
+  function PolySticky(selector, config) {
+    _classCallCheck(this, PolySticky);
 
     var me = this;
 
@@ -109,7 +109,7 @@ var _class = function () {
     me.init(selector);
   }
 
-  _createClass(_class, [{
+  _createClass(PolySticky, [{
     key: 'init',
     value: function init(selector) {
       var me = this;
@@ -180,111 +180,163 @@ var _class = function () {
     }
   }]);
 
-  return _class;
+  return PolySticky;
 }();
 
-exports.default = _class;
+exports.default = PolySticky;
 module.exports = exports['default'];
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony default export */ __webpack_exports__["default"] = (class {
-  constructor(element, style) {
-    const me = this
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var PolyStickyTop = function () {
+  function PolyStickyTop(element, style) {
+    _classCallCheck(this, PolyStickyTop);
+
+    var me = this;
 
     if (style.top !== 'auto') {
-      me.el = element
+      me.el = element;
 
-      me.update()
+      me.update();
     }
   }
-  update() {
-    const me = this
 
-    if (me.el) {
-      if (!me.inViewport()) {
-        me.stick()
-      } else {
-        me.unstick()
+  _createClass(PolyStickyTop, [{
+    key: 'update',
+    value: function update() {
+      var me = this;
+
+      if (me.el) {
+        if (!me.inViewport()) {
+          me.stick();
+        } else {
+          me.unstick();
+        }
       }
     }
-  }
-  stick() {
-    const me = this
+  }, {
+    key: 'stick',
+    value: function stick() {
+      var me = this;
 
-    me.el.style.left = `${me.el.offsetLeft}px`
-    me.el.style.right = `${me.el.parentElement.offsetWidth - me.el.offsetWidth + me.el.offsetLeft}px`
-    me.el.style.position = 'fixed'
-  }
-  unstick() {
-    const me = this
+      me.el.style.left = me.el.offsetLeft + 'px';
+      me.el.style.right = me.el.parentElement.offsetWidth - me.el.offsetWidth + me.el.offsetLeft + 'px';
+      me.el.style.position = 'fixed';
+    }
+  }, {
+    key: 'unstick',
+    value: function unstick() {
+      var me = this;
 
-    me.el.style.position = ''
-    me.el.style.left = ''
-    me.el.style.right = ''
-  }
-  inViewport() {
-    const me = this,
+      me.el.style.position = '';
+      me.el.style.left = '';
+      me.el.style.right = '';
+    }
+  }, {
+    key: 'inViewport',
+    value: function inViewport() {
+      var me = this,
           offset = me.el.offsetTop,
-          scroll = window.scrollY
+          scroll = window.scrollY;
 
-    return (scroll <= offset)
-  }
-});
+      return scroll <= offset;
+    }
+  }]);
+
+  return PolyStickyTop;
+}();
+
+exports.default = PolyStickyTop;
+module.exports = exports['default'];
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony default export */ __webpack_exports__["default"] = (class {
-  constructor(element, style) {
-    const me = this
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var PolyStickyBottom = function () {
+  function PolyStickyBottom(element, style) {
+    _classCallCheck(this, PolyStickyBottom);
+
+    var me = this;
 
     if (style.bottom !== 'auto') {
-      me.el = element
+      me.el = element;
 
-      me.update()
+      me.update();
     }
   }
-  update() {
-    const me = this
 
-    if (me.el) {
-      if (!me.inViewport()) {
-        me.stick()
-      } else {
-        me.unstick()
+  _createClass(PolyStickyBottom, [{
+    key: 'update',
+    value: function update() {
+      var me = this;
+
+      if (me.el) {
+        if (!me.inViewport()) {
+          me.stick();
+        } else {
+          me.unstick();
+        }
       }
     }
-  }
-  stick() {
-    const me = this
+  }, {
+    key: 'stick',
+    value: function stick() {
+      var me = this;
 
-    me.el.style.left = `${me.el.offsetLeft}px`
-    me.el.style.right = `${me.el.parentElement.offsetWidth - me.el.offsetWidth + me.el.offsetLeft}px`
-    me.el.style.position = 'fixed'
-  }
-  unstick() {
-    const me = this
+      me.el.style.left = me.el.offsetLeft + 'px';
+      me.el.style.right = me.el.parentElement.offsetWidth - me.el.offsetWidth + me.el.offsetLeft + 'px';
+      me.el.style.position = 'fixed';
+    }
+  }, {
+    key: 'unstick',
+    value: function unstick() {
+      var me = this;
 
-    me.el.style.position = ''
-    me.el.style.left = ''
-    me.el.style.right = ''
-  }
-  inViewport() {
-    const me = this,
+      me.el.style.position = '';
+      me.el.style.left = '';
+      me.el.style.right = '';
+    }
+  }, {
+    key: 'inViewport',
+    value: function inViewport() {
+      var me = this,
           scroll = window.scrollY + window.innerHeight,
-          offset = document.documentElement.offsetHeight - me.el.offsetHeight
+          offset = document.documentElement.offsetHeight - me.el.offsetHeight;
 
-    return (scroll >= offset )
-  }
-});
+      return scroll >= offset;
+    }
+  }]);
+
+  return PolyStickyBottom;
+}();
+
+exports.default = PolyStickyBottom;
+module.exports = exports['default'];
 
 /***/ })
 /******/ ]);
