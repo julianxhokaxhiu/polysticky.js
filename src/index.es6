@@ -1,7 +1,7 @@
 import polyfillTop from './polyfills/top'
 import polyfillBottom from './polyfills/bottom'
 
-export default class {
+export default class PolySticky{
   constructor(selector, config) {
     const me = this
 
