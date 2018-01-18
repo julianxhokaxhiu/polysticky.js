@@ -1,4 +1,4 @@
-export default class {
+export default class PolyStickyTop {
   constructor(element, style) {
     const me = this
 
