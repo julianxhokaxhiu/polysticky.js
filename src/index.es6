@@ -86,3 +86,7 @@ export default class PolySticky{
     )
   }
 }
+
+if (typeof module !== 'undefined') {
+  module.exports = PolySticky;
+}

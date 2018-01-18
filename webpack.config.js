@@ -15,8 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.es6$/,
-        exclude: /(node_modules)/,
+        test: /\.(es6|js)$/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -27,7 +26,6 @@ module.exports = {
                 }
               }]
             ],
-            "plugins": ["add-module-exports"]
           }
         }
       }
