@@ -19,6 +19,6 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.6.1",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.11.0"
+    "@procensus/webpack-dev-server": "^2.11.0"
   }
 }
