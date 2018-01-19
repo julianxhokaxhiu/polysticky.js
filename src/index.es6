@@ -14,7 +14,7 @@ export default class PolySticky{
     const me = this
 
     if (me.browserNeedsPolyfill()) {
-      const el = me.fetchElement(selector)
+      const el = (typeof selector === 'string' ?  me.fetchElement(selector) : [selector])
 
       if (el.length)
         me.polyfill(el[0], window.getComputedStyle(el[0]))
