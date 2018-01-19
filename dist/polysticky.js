@@ -250,7 +250,7 @@ var PolyStickyTop = function () {
     value: function inViewport() {
       var me = this,
           offset = me.el.offsetTop,
-          scroll = window.scrollY;
+          scroll = window.scrollY || window.pageYOffset;
 
       return scroll <= offset;
     }
@@ -325,7 +325,7 @@ var PolyStickyBottom = function () {
     key: 'inViewport',
     value: function inViewport() {
       var me = this,
-          scroll = window.scrollY + window.innerHeight,
+          scroll = (window.scrollY || window.pageYOffset) + window.innerHeight,
           offset = document.documentElement.offsetHeight - me.el.offsetHeight;
 
       return scroll >= offset;
