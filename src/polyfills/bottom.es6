@@ -35,7 +35,7 @@ export default class PolyStickyBottom {
   }
   inViewport() {
     const me = this,
-          scroll = window.scrollY + window.innerHeight,
+          scroll = (window.scrollY || window.pageYOffset) + window.innerHeight,
           offset = document.documentElement.offsetHeight - me.el.offsetHeight
 
     return (scroll >= offset )

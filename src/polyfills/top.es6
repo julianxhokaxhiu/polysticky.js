@@ -36,7 +36,7 @@ export default class PolyStickyTop {
   inViewport() {
     const me = this,
           offset = me.el.offsetTop,
-          scroll = window.scrollY
+          scroll = window.scrollY || window.pageYOffset
 
     return (scroll <= offset)
   }
