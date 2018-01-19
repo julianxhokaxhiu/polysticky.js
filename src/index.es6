@@ -53,7 +53,7 @@ export default class PolySticky{
    * @param selector The CSS selector
    */
   fetchElement(selector) {
-    const selectorType = 'querySelectorAll'
+    let selectorType = 'querySelectorAll'
 
     if (selector.indexOf('#') === 0) {
       selectorType = 'getElementById'
