@@ -1,7 +1,7 @@
 {
   "name": "polysticky",
   "description": "A position sticky polyfill that doesn't suck.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": "dist/polysticky.js",
   "author": {
     "name": "Julian Xhokaxhiu",
